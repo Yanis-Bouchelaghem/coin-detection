@@ -38,6 +38,13 @@ Dans cette approche, les étapes suivantes sont suivies :
 ![Hough-3](readme_pictures/hough-3.png)
 ![Hough-4](readme_pictures/hough-4.png)
 
+
+## Limitations et pistes d'amélioration : 
+
+- Optimiser l'acquisition de données : Bien que la dataset actuelle offre une variabilité intéressante, il serait bénéfique de capturer des images de pièces dans un environnement plus contrôlé, avec des arrière-plans et un éclairage optimal. Cela simplifierait la tâche de traitement.
+- Intégrer le deep learning pour améliorer les performances : L'incorporation de techniques de deep learning, notamment les réseaux de neurones convolutionnels (CNN), pourrait potentiellement accroître la précision du système de détection de pièces.
+- Diversifier les techniques de prétraitement d'image : En plus du flou gaussien et de la conversion en niveaux de gris, il serait judicieux d'explorer d'autres méthodes de prétraitement d'image pour améliorer la qualité des données en entrée. Cela pourrait inclure des techniques telles que l'égalisation d'histogramme, la normalisation des couleurs ou l'amélioration du contraste.
+
 ## Conclusion
 
-En comparant les deux approches, nous observons que la détection basée sur la transformation de Hough atteint une meilleure précision par rapport à celle basée sur les contours. Cependant, chaque approche a ses avantages et ses limitations, et le choix dépend des exigences spécifiques du projet et des caractéristiques des données. Ce projet illustre l'importance de comprendre et d'explorer différentes techniques de détection d'objets pour obtenir les meilleurs résultats possibles.
+En comparant les deux approches, nous observons que la détection basée sur la transformation de Hough atteint une meilleure précision par rapport à celle basée sur les contours. Malgré que l'approche contour semble mieux reconnaitre les pièces prise sous des angles larges.. Chaque approche a donc ses avantages et ses limitations, et le choix dépend des exigences spécifiques du projet et des caractéristiques des données. Ce projet illustre l'importance de comprendre et d'explorer différentes techniques de détection d'objets pour obtenir les meilleurs résultats possibles.
