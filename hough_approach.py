@@ -27,13 +27,11 @@ def detect_coins(image_path):
             cv2.circle(image, (x, y), 2, (0, 0, 255), 3)
 
         print(circles.shape[0])
-        return circles.shape[0]
     print(0)
     # Display the result
     cv2.imshow("Detected Coins", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    return 0
 
 def detect_coins_without_display(image_path):
     # Load image
@@ -70,6 +68,7 @@ def detect_coins_without_display(image_path):
 
 if __name__ == "__main__":
     # Example usage
+    detect_coins('data/IMG_1647.JPG')
     directory = 'data'
     for filename in os.listdir(directory):
         detect_coins('data/'+filename)

@@ -115,6 +115,7 @@ def detect_without_display(filename):
     return len(circles)
 
 if __name__ == "__main__":
-    directory = 'planar images'
+    detect('data/IMG_1647.JPG')
+    directory = 'data'
     for filename in os.listdir(directory):
         detect('data/'+filename)
