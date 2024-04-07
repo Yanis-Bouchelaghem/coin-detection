@@ -7,6 +7,7 @@ images = df['image']
 counts = df['count']
 
 correct_count = 0
+mean_absolute_error = 0
 
 for index, image in enumerate(images):
     #Run our method
@@ -14,7 +15,10 @@ for index, image in enumerate(images):
     #If the result of our method matches the label, increment the correct_count.
     if result == counts[index]:
         correct_count += 1
+    mean_absolute_error += abs(counts[index] - result)
 
+mean_absolute_error /= len(images)
 
 accuracy = float(correct_count) / len(images)
 print(f"Accuracy : {accuracy*100}%")
+print(f"Mean absolute error : {mean_absolute_error}")

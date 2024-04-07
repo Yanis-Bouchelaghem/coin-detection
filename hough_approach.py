@@ -68,9 +68,8 @@ def detect_coins_without_display(image_path):
     return 0
 
 
-
-
-# Example usage
-directory = 'data'
-for filename in os.listdir(directory):
-    detect_coins('data/'+filename)
+if __name__ == "__main__":
+    # Example usage
+    directory = 'data'
+    for filename in os.listdir(directory):
+        detect_coins('data/'+filename)
