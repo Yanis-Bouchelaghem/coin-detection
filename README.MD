@@ -68,8 +68,8 @@ Le principal défi de l'approche Hough précédente était la tendance à géné
 
 Ce changement à grandement amélioré les performaces, la **précision** est maintenant de **78.26%** et la **MAE est de 1.67**.
 
-![Houghv2-1](readme_pictures/houghv2-1.png)
-![Houghv2-1](readme_pictures/houghv2-1.png)
+![Houghv2-1](readme_pictures/Houghv2-1.png)
+![Houghv2-1](readme_pictures/Houghv2-1.png)
 
 ## Limitations et pistes d'amélioration : 
 
