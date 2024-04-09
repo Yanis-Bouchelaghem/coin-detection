@@ -28,6 +28,13 @@ Et voici la detection sur la même image après avoir supprimé les cercles redo
 
 ![Houghv2-3](readme_pictures/Houghv2-3.png)
 
+
+## Calcul de la somme 
+
+Pour tenter de calculer la somme, nous avons défini dans un dictionnaire qui associe chaque type de pièce à un rapport de taille spécifique et à sa valeur monétaire.
+
+Si le rapport de taille d'un cercle détecté correspond à celui d'une pièce dans le dictionnaire, alors la valeur de cette pièce est ajoutée au montant total calculé.
+
 ## Approche de reconnaissance et calcul de la somme en euro
 
 Notre méthode de détection de pièces dans une image repose sur plusieurs étapes clés. Tout d'abord, les informations essentielles des cercles détectés, telles que leurs rayons et coordonnées, sont extraites et stockées depuis les étapes précédentes. Ensuite, le plus petit rayon parmi tous les cercles détectés est identifié pour servir de référence dans l'évaluation des autres pièces. Par la suite, chaque cercle détecté est analysé individuellement en calculant le ratio de son rayon par rapport au plus petit rayon. Ce ratio est ensuite comparé aux ratios préétablis des différentes pièces avec une tolérance spécifiée. Si le ratio correspond à celui d'une pièce avec une marge d'erreur acceptable, la pièce correspondante est identifiée et sa valeur est ajoutée au total. Cette approche associe donc la détection de cercles effectué précédement avec des comparaisons de ratios pour identifier les pièces dans l'image et évaluer leur valeur respective, fournissant ainsi une estimation du montant total de la monnaie présente.
@@ -71,6 +78,12 @@ L'approche basée sur la transformation de Hough a donné les résultats suivant
 
 Ces résultats mettent en évidence la performance supérieure de l'approche utilisant la transformation de Hough par rapport à celle basée sur la détection de contours. L'approche Hough présente une précision nettement plus élevée et une erreur absolue moyenne plus faible, ce qui indique une meilleure capacité à estimer le nombre de pièces dans les images.
 
+## Calcul de la somme 
+L'approche que nous avons implémenté pour calculer la somme donne les résultats suivants :
+
+- Erreur Absolue Moyenne : 5.36
+
+![somme](readme_pictures/sum.png)
 
 ## Limitations et pistes d'amélioration : 
 
