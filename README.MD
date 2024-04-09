@@ -39,6 +39,15 @@ Dans cette approche, les étapes suivantes sont suivies :
 ![Hough-4](readme_pictures/hough-4.png)
 
 
+## Amélioration approche Hough
+
+Le principal défi de l'approche Hough précédente était la tendance à générer plusieurs cercles pour une seule pièce dans certaines situations. Dans cette version améliorée, nous avons cherché à résoudre ce problème en introduisant une comparaison entre les cercles détectés, permettant ainsi d'éliminer les cercles qui se chevauchent.
+
+Ce changement à grandement amélioré les performaces, la **précision** est maintenant de **78.26%** et la **MAE est de 1.67**.
+
+![Houghv2-1](readme_pictures/houghv2-1.png)
+![Houghv2-1](readme_pictures/houghv2-1.png)
+
 ## Limitations et pistes d'amélioration : 
 
 - Optimiser l'acquisition de données : Bien que la dataset actuelle offre une variabilité intéressante, il serait bénéfique de capturer des images de pièces dans un environnement plus contrôlé, avec des arrière-plans et un éclairage optimal. Cela simplifierait la tâche de traitement.
