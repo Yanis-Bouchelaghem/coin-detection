@@ -62,8 +62,16 @@ L'approche basée sur la transformation de Hough a donné les résultats suivant
 
 Ces résultats mettent en évidence la performance supérieure de l'approche utilisant la transformation de Hough par rapport à celle basée sur la détection de contours. L'approche Hough présente une précision nettement plus élevée et une erreur absolue moyenne plus faible, ce qui indique une meilleure capacité à estimer le nombre de pièces dans les images.
 
+## Amélioration approche Hough
 
-# Limitations et pistes d'amélioration : 
+Le principal défi de l'approche Hough précédente était la tendance à générer plusieurs cercles pour une seule pièce dans certaines situations. Dans cette version améliorée, nous avons cherché à résoudre ce problème en introduisant une comparaison entre les cercles détectés, permettant ainsi d'éliminer les cercles qui se chevauchent.
+
+Ce changement à grandement amélioré les performaces, la **précision** est maintenant de **78.26%** et la **MAE est de 1.67**.
+
+![Houghv2-1](readme_pictures/houghv2-1.png)
+![Houghv2-1](readme_pictures/houghv2-1.png)
+
+## Limitations et pistes d'amélioration : 
 
 - Optimiser l'acquisition de données : Bien que la dataset actuelle offre une variabilité intéressante, il serait bénéfique de capturer des images de pièces dans un environnement plus contrôlé, avec des arrière-plans et un éclairage optimal. Cela simplifierait la tâche de traitement.
 - Intégrer le deep learning pour améliorer les performances : L'incorporation de techniques de deep learning, notamment les réseaux de neurones convolutionnels (CNN), pourrait potentiellement accroître la précision du système de détection de pièces.
