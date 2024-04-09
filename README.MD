@@ -40,8 +40,8 @@ MAE = (1/n) * Σ |y_pred - y_true|
 ## Approche Contours
 L'approche basée sur la détection de contours a donné les résultats suivants :
 
--Précision : 31,52%  
--Erreur Absolue Moyenne : 5,03  
+- Précision : 31,52%  
+- Erreur Absolue Moyenne : 5,03  
 
 ![Contour-1](readme_pictures/contour-1.png)
 ![Contour-2](readme_pictures/contour-2.png)
@@ -51,8 +51,8 @@ L'approche basée sur la détection de contours a donné les résultats suivants
 ## Approche Hough
 L'approche basée sur la transformation de Hough a donné les résultats suivants :
 
--Précision : 78,26%  
--Erreur Absolue Moyenne : 1,67  
+- Précision : 78,26%  
+- rreur Absolue Moyenne : 1,67  
 
 ![Hough-1](readme_pictures/hough-1.png)
 ![Hough-2](readme_pictures/hough-2.png)
@@ -66,10 +66,13 @@ Ces résultats mettent en évidence la performance supérieure de l'approche uti
 
 Le principal défi de l'approche Hough précédente était la tendance à générer plusieurs cercles pour une seule pièce dans certaines situations. Dans cette version améliorée, nous avons cherché à résoudre ce problème en introduisant une comparaison entre les cercles détectés, permettant ainsi d'éliminer les cercles qui se chevauchent.
 
-Ce changement à grandement amélioré les performaces, la **précision** est maintenant de **78.26%** et la **MAE est de 1.67**.
+Ce changement à grandement amélioré les performaces:
+
+- Précision : 78,26%  
+- Erreur Absolue Moyenne : 1,67  
 
 ![Houghv2-1](readme_pictures/Houghv2-1.png)
-![Houghv2-1](readme_pictures/Houghv2-1.png)
+![Houghv2-1](readme_pictures/Houghv2-2.png)
 
 ## Limitations et pistes d'amélioration : 
 
