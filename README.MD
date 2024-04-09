@@ -42,7 +42,7 @@ Précision = (Nombre de prédictions correctes) / (Nombre total d'échantillons)
 ## Erreur Absolue Moyenne (Mean Absolute Error - MAE)
 L'erreur absolue moyenne est une mesure de la moyenne des erreurs absolues entre les prédictions du modèle et les valeurs réelles. Elle est calculée en prenant la moyenne des valeurs absolues des différences entre les prédictions et les valeurs réelles. Mathématiquement, l'erreur absolue moyenne se calcule comme suit :  
 
-MAE = (1/n) * Σ |y_pred - y_true|
+MAE = \frac{1}{n} \sum |y_{\text{pred}} - y_{\text{true}}|
 
 # Résultats Expérimentaux
 
