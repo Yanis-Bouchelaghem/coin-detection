@@ -17,7 +17,7 @@ Tout d'abord, les images sont réduites d'un facteur de 4 pour simplifier le tra
 ## Approche Hough
 
 
-Dans cette méthode, plusieurs étapes sont suivies pour détecter les cercles dans les images de pièces. Tout d'abord, les images sont redimensionnées d'un facteur de 4 pour réduire leur taille et simplifier le traitement. Ensuite, elles sont converties en niveaux de gris pour une analyse plus efficace. Un flou gaussien est ensuite appliqué pour réduire le bruit dans les images. La transformation de cercle de Hough est alors utilisée pour détecter les cercles dans les images, en spécifiant des critères de distance minimale et maximale ainsi que de rayon minimum et maximum pour la détection des cercles.
+Dans cette méthode, plusieurs étapes sont suivies pour détecter les cercles dans les images de pièces. Tout d'abord, les images sont redimensionnées d'un facteur de 4 pour réduire leur taille et simplifier le traitement. Ensuite, elles sont converties en niveaux de gris pour une analyse plus efficace. Un flou gaussien est ensuite appliqué pour réduire le bruit dans les images. La transformation de cercle de Hough est alors utilisée pour détecter les cercles dans les images, en spécifiant des critères de distance minimale et maximale ainsi que de rayon minimum et maximum pour la détection des cercles. Enfin, les cercles redondant sont supprimé afin d'affiné le résultat obtenu.
 
 ## Approche de reconnaissance et calcule de la somme en euro
 
@@ -62,17 +62,6 @@ L'approche basée sur la transformation de Hough a donné les résultats suivant
 
 Ces résultats mettent en évidence la performance supérieure de l'approche utilisant la transformation de Hough par rapport à celle basée sur la détection de contours. L'approche Hough présente une précision nettement plus élevée et une erreur absolue moyenne plus faible, ce qui indique une meilleure capacité à estimer le nombre de pièces dans les images.
 
-## Amélioration approche Hough
-
-Le principal défi de l'approche Hough précédente était la tendance à générer plusieurs cercles pour une seule pièce dans certaines situations. Dans cette version améliorée, nous avons cherché à résoudre ce problème en introduisant une comparaison entre les cercles détectés, permettant ainsi d'éliminer les cercles qui se chevauchent.
-
-Ce changement à grandement amélioré les performaces:
-
-- Précision : 78,26%  
-- Erreur Absolue Moyenne : 1,67  
-
-![Houghv2-1](readme_pictures/Houghv2-1.png)
-![Houghv2-1](readme_pictures/Houghv2-2.png)
 
 ## Limitations et pistes d'amélioration : 
 
