@@ -156,43 +156,44 @@ def calculate_amount(mapped_image):
     mappedImage = cv2.resize(image, (int(image.shape[1] / 4), int(image.shape[0] / 4)))
     radius = []
     coordinates = []
+    if circles is not None:
+        for x, y, detected_radius in circles:
+            radius.append(detected_radius)
+            coordinates.append([x, y])
 
-    for x, y, detected_radius in circles:
-        radius.append(detected_radius)
-        coordinates.append([x, y])
+        smallest = min(radius)
+        threshold = 0.05555555  # 0.035
+        total_money = 0
+        coins_on_board = 0
+        font = cv2.FONT_HERSHEY_COMPLEX
 
-    smallest = min(radius)
-    threshold = 0.045  # 0.035
-    total_money = 0
-    coins_on_board = 0
-    font = cv2.FONT_HERSHEY_COMPLEX
+        for circle in circles:
+            ratio_to_check = circle[2] / smallest
+            (x, y, r) = circle
+            # Draw the circle
+            cv2.circle(mappedImage, (x, y), r, (0, 255, 0), 4)
+            # Draw the center of the circle
+            cv2.circle(mappedImage, (x, y), 2, (0, 0, 255), 3)
+            for rub in CoinConfig:
+                if abs(ratio_to_check - CoinConfig[rub]['ratio']) <= threshold:
+                    value = CoinConfig[rub]['value']
+                    CoinConfig[rub]['count'] += 1
+                    total_money += value
+                    cv2.putText(mappedImage, str(value), (int(circle[0]) - 25, int(circle[1]) + 20), font, 1,
+                                (0, 0, 0), 5)
+                    coins_on_board += 1
+                    break
 
-    for circle in circles:
-        ratio_to_check = circle[2] / smallest
-        (x, y, r) = circle
-        # Draw the circle
-        cv2.circle(mappedImage, (x, y), r, (0, 255, 0), 4)
-        # Draw the center of the circle
-        cv2.circle(mappedImage, (x, y), 2, (0, 0, 255), 3)
-        for rub in CoinConfig:
-            if abs(ratio_to_check - CoinConfig[rub]['ratio']) <= threshold:
-                value = CoinConfig[rub]['value']
-                CoinConfig[rub]['count'] += 1
-                total_money += value
-                cv2.putText(mappedImage, str(value), (int(circle[0]) - 25, int(circle[1]) + 20), font, 1,
-                            (0, 0, 0), 5)
-                coins_on_board += 1
-                break
+        # cv2.imwrite("mappedMoney1.jpg", mappedImage)
+        cv2.imshow('result', mappedImage)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        height, width, channels = mappedImage.shape
+        avg_color = mappedImage.mean(axis=0).mean(axis=0).round()
 
-    # cv2.imwrite("mappedMoney1.jpg", mappedImage)
-    cv2.imshow('result', mappedImage)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    height, width, channels = mappedImage.shape
-    avg_color = mappedImage.mean(axis=0).mean(axis=0).round()
-
-    print('\n height, width, avg_color, nombre de pieces, total')
-    return height, width, avg_color, coins_on_board, total_money
+        print('\n height, width, avg_color, nombre de pieces, total')
+        return height, width, avg_color, coins_on_board, total_money
+    return 0, 0, 0, 0, 0
 
 
 if __name__ == "__main__":
