@@ -5,13 +5,10 @@ La dataset fournie pour ce projet présente une grande variance en termes de pos
 
 ## Approche Contour
 
-Dans cette approche, les étapes suivantes sont suivies :
-
 Tout d'abord, les images sont réduites d'un facteur de 4 pour simplifier le traitement ultérieur. Ensuite, elles sont converties en niveaux de gris pour faciliter la manipulation. Un flou gaussien est alors appliqué pour réduire le bruit et rendre les contours plus lisses. Pour extraire les bords des objets dans les images, l'algorithme de détection de contours de Canny est utilisé. Ensuite, une opération de dilatation est effectuée pour accentuer les contours. La détection des contours est ensuite réalisée à l'aide de la fonction cv2.findContours, filtrant les contours en fonction de critères tels que leur taille et leur circularité.
 
 ## Approche Hough
 
-Dans cette approche, les étapes suivantes sont suivies :
 
 Dans cette méthode, plusieurs étapes sont suivies pour détecter les cercles dans les images de pièces. Tout d'abord, les images sont redimensionnées d'un facteur de 4 pour réduire leur taille et simplifier le traitement. Ensuite, elles sont converties en niveaux de gris pour une analyse plus efficace. Un flou gaussien est ensuite appliqué pour réduire le bruit dans les images. La transformation de cercle de Hough est alors utilisée pour détecter les cercles dans les images, en spécifiant des critères de distance minimale et maximale ainsi que de rayon minimum et maximum pour la détection des cercles.
 
