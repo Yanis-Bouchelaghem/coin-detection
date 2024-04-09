@@ -16,13 +16,6 @@ Dans cette approche, les étapes suivantes sont suivies :
 - Filtrage des Contours: Les contours sont filtrés en fonction de critères tels que la taille minimale et maximale des contours ainsi que leur circularité.
 - Précision: Cette approche a une précision de 31,52% et un MAE de 5.03 c-à-d environ 5 piéces sur l'ensemble du jeu de données.
 
-### Exemples de résultats
-
-![Contour-1](readme_pictures/contour-1.png)
-![Contour-2](readme_pictures/contour-2.png)
-![Contour-3](readme_pictures/contour-3.png)
-![Contour-4](readme_pictures/contour-4.png)
-
 ## Approche Hough
 
 Dans cette approche, les étapes suivantes sont suivies :
@@ -33,10 +26,48 @@ Dans cette approche, les étapes suivantes sont suivies :
 - Transformation de Cercle de Hough: La transformation de cercle de Hough est utilisée pour détecter des cercles dans les images. Des critères de distance minimale et maximale ainsi que de rayon minimum et maximum sont spécifiés.
 - Précision: Cette approche atteint une précision de 50,0% sur l'ensemble du jeu de données.
 
+## Approche de reconnaissance et calcule de la somme en euro
+
+Notre méthode de détection de pièces dans une image repose sur plusieurs étapes clés. Tout d'abord, les informations essentielles des cercles détectés, telles que leurs rayons et coordonnées, sont extraites et stockées depuis les étapes précédentes. Ensuite, le plus petit rayon parmi tous les cercles détectés est identifié pour servir de référence dans l'évaluation des autres pièces. Par la suite, chaque cercle détecté est analysé individuellement en calculant le ratio de son rayon par rapport au plus petit rayon. Ce ratio est ensuite comparé aux ratios préétablis des différentes pièces avec une tolérance spécifiée. Si le ratio correspond à celui d'une pièce avec une marge d'erreur acceptable, la pièce correspondante est identifiée et sa valeur est ajoutée au total. Cette approche associe donc la détection de cercles effectué précédement avec des comparaisons de ratios pour identifier les pièces dans l'image et évaluer leur valeur respective, fournissant ainsi une estimation du montant total de la monnaie présente.
+
+## Métriques d'Évaluation
+
+### Précision (Accuracy)
+La précision est une mesure de la performance du modèle qui évalue le nombre de prédictions correctes par rapport au nombre total d'échantillons. Elle est calculée en divisant le nombre de prédictions correctes par le nombre total d'échantillons. Mathématiquement, la précision se calcule comme suit :  
+
+Précision = (Nombre de prédictions correctes) / (Nombre total d'échantillons) * 100%
+
+## Erreur Absolue Moyenne (Mean Absolute Error - MAE)
+L'erreur absolue moyenne est une mesure de la moyenne des erreurs absolues entre les prédictions du modèle et les valeurs réelles. Elle est calculée en prenant la moyenne des valeurs absolues des différences entre les prédictions et les valeurs réelles. Mathématiquement, l'erreur absolue moyenne se calcule comme suit :  
+
+MAE = (1/n) * Σ |y_pred - y_true|
+
+## Résultats Expérimentaux
+
+### Approche Contours
+L'approche basée sur la détection de contours a donné les résultats suivants :
+
+Précision : 31,52%
+Erreur Absolue Moyenne : 5,03  
+
+![Contour-1](readme_pictures/contour-1.png)
+![Contour-2](readme_pictures/contour-2.png)
+![Contour-3](readme_pictures/contour-3.png)
+![Contour-4](readme_pictures/contour-4.png)
+
+### Approche Hough
+L'approche basée sur la transformation de Hough a donné les résultats suivants :
+
+Précision : 78,26%
+Erreur Absolue Moyenne : 1,67  
+
 ![Hough-1](readme_pictures/hough-1.png)
 ![Hough-2](readme_pictures/hough-2.png)
 ![Hough-3](readme_pictures/hough-3.png)
 ![Hough-4](readme_pictures/hough-4.png)
+
+
+Ces résultats mettent en évidence la performance supérieure de l'approche utilisant la transformation de Hough par rapport à celle basée sur la détection de contours. L'approche Hough présente une précision nettement plus élevée et une erreur absolue moyenne plus faible, ce qui indique une meilleure capacité à estimer le nombre de pièces dans les images.
 
 
 ## Limitations et pistes d'amélioration : 
