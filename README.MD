@@ -82,4 +82,9 @@ Ce changement à grandement amélioré les performaces:
 
 # Conclusion
 
-En comparant les deux approches, nous observons que la détection basée sur la transformation de Hough atteint une meilleure précision par rapport à celle basée sur les contours. Malgré que l'approche contour semble mieux reconnaitre les pièces prise sous des angles larges.. Chaque approche a donc ses avantages et ses limitations, et le choix dépend des exigences spécifiques du projet et des caractéristiques des données. Ce projet illustre l'importance de comprendre et d'explorer différentes techniques de détection d'objets pour obtenir les meilleurs résultats possibles.
+En comparant les deux approches, nous observons que la détection basée sur la transformation de Hough atteint une meilleure précision par rapport à celle basée sur les contours. Malgré que l'approche contour semble mieux reconnaitre les pièces prise sous des angles larges. Chaque approche a donc ses avantages et ses limitations, et le choix dépend des exigences spécifiques du projet et des caractéristiques des données. Ce projet illustre l'importance de comprendre et d'explorer différentes techniques de détection d'objets pour obtenir les meilleurs résultats possibles.
+
+# Equipe
+- [AOUABED Samy Aghiles](https://github.com/Samy-Abd)
+- [BOUCHELAGHEM Abdelghani Yanis](https://github.com/Yanis-Bouchelaghem)
+- [BENNABI Malek Mohamed](https://github.com/Malekbennabi3)
