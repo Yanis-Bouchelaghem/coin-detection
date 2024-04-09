@@ -19,6 +19,14 @@ Tout d'abord, les images sont réduites d'un facteur de 4 pour simplifier le tra
 
 Dans cette méthode, plusieurs étapes sont suivies pour détecter les cercles dans les images de pièces. Tout d'abord, les images sont redimensionnées d'un facteur de 4 pour réduire leur taille et simplifier le traitement. Ensuite, elles sont converties en niveaux de gris pour une analyse plus efficace. Un flou gaussien est ensuite appliqué pour réduire le bruit dans les images. La transformation de cercle de Hough est alors utilisée pour détecter les cercles dans les images, en spécifiant des critères de distance minimale et maximale ainsi que de rayon minimum et maximum pour la détection des cercles. Enfin, les cercles redondant sont supprimé afin d'affiné le résultat obtenu.
 
+Voici un exemple de detection 
+
+![Hough-4](readme_pictures/hough-4.png)
+
+Et voici le même exemple de detection après avoir supprimé les cercles redondant.
+
+![Houghv2-3](readme_pictures/Houghv2-3.png)
+
 ## Approche de reconnaissance et calcule de la somme en euro
 
 Notre méthode de détection de pièces dans une image repose sur plusieurs étapes clés. Tout d'abord, les informations essentielles des cercles détectés, telles que leurs rayons et coordonnées, sont extraites et stockées depuis les étapes précédentes. Ensuite, le plus petit rayon parmi tous les cercles détectés est identifié pour servir de référence dans l'évaluation des autres pièces. Par la suite, chaque cercle détecté est analysé individuellement en calculant le ratio de son rayon par rapport au plus petit rayon. Ce ratio est ensuite comparé aux ratios préétablis des différentes pièces avec une tolérance spécifiée. Si le ratio correspond à celui d'une pièce avec une marge d'erreur acceptable, la pièce correspondante est identifiée et sa valeur est ajoutée au total. Cette approche associe donc la détection de cercles effectué précédement avec des comparaisons de ratios pour identifier les pièces dans l'image et évaluer leur valeur respective, fournissant ainsi une estimation du montant total de la monnaie présente.
@@ -57,7 +65,7 @@ L'approche basée sur la transformation de Hough a donné les résultats suivant
 ![Hough-1](readme_pictures/hough-1.png)
 ![Hough-2](readme_pictures/hough-2.png)
 ![Hough-3](readme_pictures/hough-3.png)
-![Hough-4](readme_pictures/hough-4.png)
+
 
 
 Ces résultats mettent en évidence la performance supérieure de l'approche utilisant la transformation de Hough par rapport à celle basée sur la détection de contours. L'approche Hough présente une précision nettement plus élevée et une erreur absolue moyenne plus faible, ce qui indique une meilleure capacité à estimer le nombre de pièces dans les images.
