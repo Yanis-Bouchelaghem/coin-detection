@@ -75,7 +75,7 @@ Ces résultats mettent en évidence la performance supérieure de l'approche uti
 ## Limitations et pistes d'amélioration : 
 
 - Optimiser l'acquisition de données : Bien que la dataset actuelle offre une variabilité intéressante, il serait bénéfique de capturer des images de pièces dans un environnement plus contrôlé, avec des arrière-plans et un éclairage optimal. Cela simplifierait la tâche de traitement.
-- Intégrer le deep learning pour améliorer les performances : L'incorporation de techniques de deep learning, notamment les réseaux de neurones convolutionnels (CNN), pourrait potentiellement accroître la précision du système de détection de pièces.
+- Intégrer le deep learning pour améliorer les performances : L'incorporation de techniques de deep learning, notamment les réseaux de neurones convolutionnels (CNN) pour la classification et des modèles de détection d'objets te que YOLO ou R-CNN. Ceci pourrait potentiellement accroître la précision du système de détection et reconaissance de pièces.
 - Diversifier les techniques de prétraitement d'image : En plus du flou gaussien et de la conversion en niveaux de gris, il serait judicieux d'explorer d'autres méthodes de prétraitement d'image pour améliorer la qualité des données en entrée. Cela pourrait inclure des techniques telles que l'égalisation d'histogramme, la normalisation des couleurs ou l'amélioration du contraste.
 
 # Conclusion
