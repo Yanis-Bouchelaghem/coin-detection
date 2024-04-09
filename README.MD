@@ -37,12 +37,12 @@ Notre méthode de détection de pièces dans une image repose sur plusieurs éta
 ## Précision (Accuracy)
 La précision est une mesure de la performance du modèle qui évalue le nombre de prédictions correctes par rapport au nombre total d'échantillons. Elle est calculée en divisant le nombre de prédictions correctes par le nombre total d'échantillons. Mathématiquement, la précision se calcule comme suit :  
 
-$Précision = (Nombre de prédictions correctes) / (Nombre total d'échantillons) * 100%$
+Précision = (Nombre de prédictions correctes) / (Nombre total d'échantillons) * 100%
 
 ## Erreur Absolue Moyenne (Mean Absolute Error - MAE)
 L'erreur absolue moyenne est une mesure de la moyenne des erreurs absolues entre les prédictions du modèle et les valeurs réelles. Elle est calculée en prenant la moyenne des valeurs absolues des différences entre les prédictions et les valeurs réelles. Mathématiquement, l'erreur absolue moyenne se calcule comme suit :  
 
-$MAE = (1/n) * Σ |y_pred - y_true|$
+MAE = (1/n) * Σ |y_pred - y_true|
 
 # Résultats Expérimentaux
 
